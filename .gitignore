@@ -1,0 +1,6 @@
+*
+!/.gitignore
+!/*.[ch]
+!/Makefile
+!/blobs*
+!/blobs*/*.sha1sum
