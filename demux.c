@@ -45,6 +45,13 @@ int demux_get_packet(unsigned char **data, unsigned int *size)
 	return -1;
 }
 
+void demux_discard(int start)
+{
+	int discarded = 1;
+	while(discarded < start && demux_get_packet(NULL, NULL) > 0)
+		discarded++;
+}
+
 void demux_close(void)
 {
 	avformat_close_input(&fc);

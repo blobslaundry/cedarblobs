@@ -31,6 +31,7 @@ void source_close(rawsource_t *raw);
 typedef struct {
 	char *infile;
 	char *outfile;
+	int start;
 	int number;
 	int verbose;
 } options_t;
@@ -50,6 +51,7 @@ typedef struct {
 } demux_t;
 void demux_open(demux_t *demux, const char *filename);
 int  demux_get_packet(unsigned char **data, unsigned int *size);
+void demux_discard(int start);
 void demux_close(void);
 
 #endif

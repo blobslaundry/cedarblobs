@@ -54,6 +54,7 @@ void decode_init(const char *filename)
 
 	demux_t demux;
 	demux_open(&demux, filename);
+	if(option->start > 0) demux_discard(option->start);
 
 	cedarv_stream_info_t info;
 	MEMSETZERO(info);
